@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
+
 <body>
 
     <section>
@@ -16,9 +17,11 @@
                 <img class="logo" src="./assets/logo.png" />
                 <h3>Hasara Clothing</h3>
             </div>
+            <div class="menu-icon">☰</div> <!-- hamburger menu-->
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">About</a>
+                <a href="#">Product</a>
                 <a href="#">Contact</a>
             </div>
         </nav>
@@ -27,7 +30,11 @@
             <img src="./assets/banner2.png" />
         </div>
     </section>
-
+    <section class="sliding-text"> News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
+        News
+        News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
+        NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews News
+    </section>
 
 
     <section class="promo-section">
@@ -69,18 +76,18 @@
 
     <footer class="footer">
         <div class="footer-left">
-            
-                <p>98 centrum,Uppsala,</p>
-                <p>Uppsala,</p>
-                <p> Sweden</p>
-            
+
+            <p>98 centrum,Uppsala,</p>
+            <p>Uppsala,</p>
+            <p> Sweden</p>
+
             <p>email:qwerdssf@gmail.com</p>
             <p>076-12323456</p>
 
         </div>
         <div class="footer-middle">
             <a class="navlinks" href="#">About</a> <br>
-            <a class="navlinks" href="#">Contanct Us</a><br>
+            <a class="navlinks" href="#">Products</a><br>
             <a class="navlinks" href="#">About</a> <br>
             <a class="navlinks" href="#">Contanct Us</a><br>
             <a class="navlinks" href="#">Map</a>
@@ -99,3 +106,19 @@
 </body>
 
 </html>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuIcon.addEventListener("click", function () {
+            navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
+          /*  in first click If navLinks.style.display is not "flex", it sets it to "flex", making it visible.
+            in the next click If navLinks.style.display is "flex", it sets it to "none", hiding it.*/
+        });
+    });
+   /* navLinks.style.display = "none" hides the menu.
+    navLinks.style.display = "flex" makes it visible.*/
+</script>
