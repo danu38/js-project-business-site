@@ -22,14 +22,24 @@
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Product</a>
-                <a href="#">Contact</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
-        <div class="banner">
-            <img src="./assets/banner.png" />
-            <img src="./assets/banner2.png" />
+        
+    </section>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="./assets/vedio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Experience the future</p>
         </div>
     </section>
+
+
     <section class="sliding-text"> News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
         News
         News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
@@ -115,10 +125,10 @@
 
         menuIcon.addEventListener("click", function () {
             navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
-          /*  in first click If navLinks.style.display is not "flex", it sets it to "flex", making it visible.
-            in the next click If navLinks.style.display is "flex", it sets it to "none", hiding it.*/
+            /*  in first click If navLinks.style.display is not "flex", it sets it to "flex", making it visible.
+              in the next click If navLinks.style.display is "flex", it sets it to "none", hiding it.*/
         });
     });
-   /* navLinks.style.display = "none" hides the menu.
-    navLinks.style.display = "flex" makes it visible.*/
+    /* navLinks.style.display = "none" hides the menu.
+     navLinks.style.display = "flex" makes it visible.*/
 </script>
