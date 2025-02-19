@@ -19,13 +19,13 @@
             </div>
             <div class="menu-icon">☰</div> <!-- hamburger menu-->
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#">About</a>
                 <a href="#">Product</a>
                 <a href="contact.html">Contact</a>
             </div>
         </nav>
-        
+
     </section>
 
     <section class="hero">
@@ -40,11 +40,12 @@
     </section>
 
 
-    <section class="sliding-text"> News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
-        News
-        News NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews
-        NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews NewsNews News
-    </section>
+    <div class="sliding-text-container">
+        <div class="sliding-text">
+            <p>🔥 New Arrivals • 💎 Exclusive Deals • 🛍️ Limited Stock • 🎉 Shop Now • 🌟 Best Sellers • 👕 Trendy
+                Fashion •</p>
+        </div>
+    </div>
 
 
     <section class="promo-section">
@@ -124,11 +125,7 @@
         const navLinks = document.querySelector(".nav-links");
 
         menuIcon.addEventListener("click", function () {
-            navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
-            /*  in first click If navLinks.style.display is not "flex", it sets it to "flex", making it visible.
-              in the next click If navLinks.style.display is "flex", it sets it to "none", hiding it.*/
+            navLinks.classList.toggle("show"); // Toggle class instead of inline styles
         });
     });
-    /* navLinks.style.display = "none" hides the menu.
-     navLinks.style.display = "flex" makes it visible.*/
 </script>
