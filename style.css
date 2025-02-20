@@ -93,9 +93,24 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(79, 76, 76, 0); /* Lighter overlay */
     /* Optional overlay */
     z-index: 1;
+}
+
+.hero-content h1 {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* hero images styles ended */
@@ -264,7 +279,7 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: black;
+    background: #FFF5E1; 
     padding: 10px 0;
 }
 
@@ -302,7 +317,7 @@ body {
 /* Text styling */
 .sliding-text p {
     font-size: 1.5rem;
-    color: white;
+    color: #572541;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -364,7 +379,8 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     max-width: 500px;
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 /* Hover effect added for promo card */
@@ -501,6 +517,52 @@ body {
 }
 /* promo card styles ended */
 
+/* Contact Section */
+.contact-section {
+    background: #FFF5E1; /* Soft Beige - separates Promo & Footer */
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 600px;
+}
+
+/* 🔹 Heading */
+.contact-container h2 {
+    font-size: 2rem;
+    color: #572541; /* Deep Plum */
+    margin-bottom: 10px;
+}
+
+/* 🔹 Paragraph */
+.contact-container p {
+    font-size: 1.2rem;
+    color: #2C2C2C;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Contact Button */
+.contact-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #FFD700; /* Gold */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.contact-button:hover {
+    background: #C9A600; /* Darker Gold */
+    transform: scale(1.05);
+}
+
+
 /* Footer Section */
 .footer {
     background-color: #572541;
@@ -523,6 +585,11 @@ body {
     margin-bottom: 20px;
 }
 
+.footer-left {
+    text-align: center;
+    /* Centers the middle section */
+    flex: 1;
+}
 .footer-middle {
     text-align: center;
     /* Centers the middle section */
@@ -530,7 +597,7 @@ body {
 }
 
 .footer-right {
-    text-align: right;
+    text-align: center;
     flex: 1;
 }
 
