@@ -530,21 +530,21 @@ body {
     max-width: 600px;
 }
 
-/* 🔹 Heading */
+/* Heading */
 .contact-container h2 {
     font-size: 2rem;
     color: #572541; /* Deep Plum */
     margin-bottom: 10px;
 }
 
-/* 🔹 Paragraph */
+/*  Paragraph */
 .contact-container p {
     font-size: 1.2rem;
     color: #2C2C2C;
     margin-bottom: 20px;
 }
 
-/* 🔹 Contact Button */
+/* Contact Button */
 .contact-button {
     display: inline-block;
     padding: 12px 25px;
