@@ -130,12 +130,9 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -190,7 +187,7 @@ body {
 }
 
 .promo-card {
-    background: white;
+    background: #FFF5E1;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 90%;
@@ -211,7 +208,7 @@ body {
     border-radius: 10px;
 }
 
-.promo-text h2 {
+.promo-text h2,h3 {
     color: #572541;
     font-size: 1.2rem;
 }
