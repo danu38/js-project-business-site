@@ -20,20 +20,39 @@ body {
     align-items: center;
     text-align: center;
     padding: 10px;
-    background: #572541;
+    /* background: #572541; */
     position: relative;
     z-index: 1000;
 
 }
 
-.branding {
+.navbar-contact {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 10px;
+    background: #572541;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+.branding {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.branding h3 {
+    color: #C9A600;
 }
 
 .logo {
-    width: 50px;
-    margin-right: 10px;
+    width: 80px;
+    /* margin-right: 10px; */
+    border-radius: 50%;
+    margin-top: 20px;
 }
 
 .nav-links {
@@ -44,18 +63,38 @@ body {
     text-align: center;
     padding: 10px;
     position: absolute;
-    top: 60px;
-    right: 0;
+    top: 80px;
     border-radius: 8px;
+    left: 0;
+    /* Ensure it starts from the left */
+    z-index: 1100;
+    /* Higher than hero-content */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
 }
+.nav-links.show {
+    transform: translateY(0);
+    display: flex;
+}
+
+
+.nav-links.show .close-menu {
+    display: block; /* Show close button when menu is open */
+}
+
+.nav-links.show ~ .menu-icon {
+    display: none; /* Hide hamburger when menu is open */
+}
+
 
 .nav-links a {
     padding: 10px;
     color: #ecdfec;
-    text-decoration: none;
+    text-decoration: solid;
     display: block;
     transition: color 0.3s ease-in-out;
     position: relative;
+
 }
 
 .nav-links a::after {
@@ -83,17 +122,28 @@ body {
     font-size: 2rem;
     cursor: pointer;
     color: #FFD700;
-    margin-top: 10px;
+    margin-top: 0px;
     transition: transform 0.3s ease-in-out;
+    align-items: flex-end;
+    z-index: 1000;
+}
+.close-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
 }
 
 .menu-icon:hover {
     transform: scale(1.1);
 }
 
-.nav-links.show {
-    display: flex;
-}
+
 
 /* ======================
    Hero Section
@@ -103,6 +153,8 @@ body {
     width: 100%;
     height: 80vh;
     overflow: hidden;
+    z-index: 100;
+    /* Lower than nav-links */
 }
 
 .hero video {
@@ -117,13 +169,13 @@ body {
 
 .hero-content {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
     font-size: 1.5rem;
-    z-index: 2;
+    z-index: 900;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -131,6 +183,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -208,7 +261,8 @@ body {
     border-radius: 10px;
 }
 
-.promo-text h2,h3 {
+.promo-text h2,
+h3 {
     color: #572541;
     font-size: 1.2rem;
 }
@@ -283,6 +337,12 @@ p {
     color: #FFF5E1;
 }
 
+.copyright {
+
+    color: #572541;
+    text-align: center;
+}
+
 /* ======================
    Responsive Enhancements
    ====================== */
@@ -291,7 +351,16 @@ p {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
-        padding: 15px 30px;
+        padding: 1px 3px;
+    }
+
+    .navbar-contact {
+        flex-direction: row;
+        background-color: #572541;
+        justify-content: space-between;
+        /* padding: 15px 30px; */
+        padding: 1px 3px;
+
     }
 
     .nav-links {
@@ -300,12 +369,22 @@ p {
         position: static;
         width: auto;
         background: none;
+        justify-content: center; /* Centers menu items */
+        align-items: center; /* Aligns them properly */
+        gap: 20px; /* Adds spacing between items */
+        margin-top: 70px;
+    }
+
+    .nav-links a {
+        font-size: 2.0rem;
     }
 
     .menu-icon {
         display: none;
     }
-
+    .close-menu {
+        display: none;
+    }
     .promo-section {
         flex-direction: row;
         justify-content: space-around;
@@ -333,4 +412,76 @@ p {
         flex-direction: row;
         justify-content: space-between;
     }
+}
+
+/* ======================
+   Order Form Styling (Mobile First)
+   ====================== */
+
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    color: #572541;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #572541;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    /* Increase padding */
+    border: 2px solid #572541;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    /* Prevents overflow */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #FFD700;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #C9A600;
+    transform: scale(1.05);
 }
