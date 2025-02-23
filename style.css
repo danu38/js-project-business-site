@@ -72,6 +72,7 @@ body {
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
 }
+
 .nav-links.show {
     transform: translateY(0);
     display: flex;
@@ -79,11 +80,13 @@ body {
 
 
 .nav-links.show .close-menu {
-    display: block; /* Show close button when menu is open */
+    display: block;
+    /* Show close button when menu is open */
 }
 
-.nav-links.show ~ .menu-icon {
-    display: none; /* Hide hamburger when menu is open */
+.nav-links.show~.menu-icon {
+    display: none;
+    /* Hide hamburger when menu is open */
 }
 
 
@@ -127,6 +130,7 @@ body {
     align-items: flex-end;
     z-index: 1000;
 }
+
 .close-menu {
     position: absolute;
     top: 15px;
@@ -240,19 +244,35 @@ body {
 }
 
 .promo-card {
-    background: #FFF5E1;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    margin-bottom: 20px;
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+}
+
+/* Adds extra space at the bottom like a real Polaroid */
+.promo-card::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: white;
+    position: absolute;
+    bottom: -10px;
+    border-radius: 0 0 8px 8px;
 }
 
 .promo-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .promo-img {
@@ -321,13 +341,19 @@ h3 {
     color: white;
     text-align: center;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
     align-items: center;
+    justify-items: center;
 }
 
-.footer a,
-p {
+.footer div {
+    width: 100%;
+    text-align: center;
+}
+
+.footer a {
     color: #FFD700;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
@@ -369,9 +395,12 @@ p {
         position: static;
         width: auto;
         background: none;
-        justify-content: center; /* Centers menu items */
-        align-items: center; /* Aligns them properly */
-        gap: 20px; /* Adds spacing between items */
+        justify-content: center;
+        /* Centers menu items */
+        align-items: center;
+        /* Aligns them properly */
+        gap: 20px;
+        /* Adds spacing between items */
         margin-top: 70px;
     }
 
@@ -382,9 +411,11 @@ p {
     .menu-icon {
         display: none;
     }
+
     .close-menu {
         display: none;
     }
+
     .promo-section {
         flex-direction: row;
         justify-content: space-around;
@@ -392,6 +423,24 @@ p {
 
     .promo-card {
         max-width: 45%;
+    }
+
+    .footer {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+
+    .footer div {
+        text-align: left;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        /* Stronger glow on desktops */
+        border-width: 3px;
+        /* Thicker border on larger screens */
     }
 }
 
@@ -409,8 +458,7 @@ p {
     }
 
     .footer {
-        flex-direction: row;
-        justify-content: space-between;
+        padding: 50px;
     }
 }
 
@@ -465,6 +513,7 @@ p {
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: #FFD700;
+    background-color: #FFF9D9;
     box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
@@ -484,4 +533,48 @@ p {
 .submit-btn:hover {
     background: #C9A600;
     transform: scale(1.05);
+}
+
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+/* Navbar Dark Mode */
+.dark-mode .navbar {
+    background-color: #333;
+}
+
+/* Form Dark Mode */
+.dark-mode .form-container {
+    background: #2a2a2a;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+    background: #444;
+    color: white;
+    border: 2px solid #FFD700;
+}
+
+/* Dark Mode Button */
+.theme-button {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.theme-button:hover {
+    background: #C9A600;
 }
